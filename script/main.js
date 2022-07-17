@@ -6,7 +6,7 @@ let hand = 1;
 const EYE_MAX = 6;
 const MOUTH_MAX = 11;
 const HEAD_MAX = 6;
-const HAND_MAX = 4;
+const HAND_MAX = 8;
 
 function switchPrevHead() {
   const headImg = document.querySelector(".ghost-head__img");
