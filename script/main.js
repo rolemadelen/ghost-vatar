@@ -88,7 +88,7 @@ function saveImage() {
       createEl.href = canvasUrl;
 
       // This is the name of our downloaded file
-      createEl.download = "download-this-canvas";
+      createEl.download = "ghostvatar";
 
       // Click the download button, causing a download, and then remove it
       createEl.click();
