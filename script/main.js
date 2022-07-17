@@ -78,3 +78,20 @@ function switchNextHand() {
     if(hand > HAND_MAX) hand = 1;
     handImg.src=`./assets/hand/ghost-hand${hand}.png`;
 }
+
+function saveImage() {
+    html2canvas(document.querySelector(".preview")).then(canvas => {
+        let canvasUrl = canvas.toDataURL();
+        // Create an anchor, and set the href value to our data URL
+        const createEl = document.createElement('a');
+        createEl.href = canvasUrl;
+    
+        // This is the name of our downloaded file
+        createEl.download = "download-this-canvas";
+    
+        // Click the download button, causing a download, and then remove it
+        createEl.click();
+        createEl.remove();
+    
+    });
+}
