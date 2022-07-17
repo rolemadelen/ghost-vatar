@@ -153,6 +153,11 @@ img {
 }
 
 .ghost {
+    &-head {
+        position: absolute;
+        top: 0;
+    }
+
     &-eye {
         position: absolute;
         top: 10rem;
@@ -165,5 +170,10 @@ img {
         width: 10rem;
         top: 14rem;
         right: 7rem;
+    }
+
+    &-hand {
+        position: absolute;
+        top: 0;
     }
 }

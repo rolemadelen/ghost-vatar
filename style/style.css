@@ -157,6 +157,10 @@ img {
   position: relative;
 }
 
+.ghost-head {
+  position: absolute;
+  top: 0;
+}
 .ghost-eye {
   position: absolute;
   top: 10rem;
@@ -168,6 +172,10 @@ img {
   width: 10rem;
   top: 14rem;
   right: 7rem;
+}
+.ghost-hand {
+  position: absolute;
+  top: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
