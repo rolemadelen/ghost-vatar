@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./script/main.js"></script>
+    <title>Ghost-vatar</title>
+</head>
+<body>
+    <section class="wrapper">
+        <div class="preview">
+            <div class="ghost-body">
+                <img src="./assets/ghost-body.png" alt="ghost body" class="ghost-body__img">
+            </div>
+            <div class="ghost-eye">
+                <img src="./assets/eyes/ghost-eye1.png" alt="ghost eye" class="ghost-eye__img">
+            </div>
+            <div class="ghost-mouth">
+                <img src="./assets/mouth/ghost-mouth6.png" alt="ghost mouth" class="ghost-mouth__img">
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="eye">
+                <span>Eye</span>
+                <button onclick="switchPrevEye()">Prev</button>
+                <button onclick="switchNextEye()">Next</button>
+            </div>
+            <div class="mouth">
+                <span>Mouth</span>
+                <button onclick="switchPrevMouth()">Prev</button>
+                <button onclick="switchNextMouth()">Next</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
