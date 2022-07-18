@@ -1,3 +1,5 @@
+let isHeadOn = false;
+
 const EYE_MAX = 9;
 const MOUTH_MAX = 11;
 const HEAD_MAX = 6;
@@ -25,6 +27,14 @@ function saveImage() {
 function changeHead(n) {
   const headImg = document.querySelector(".ghost-head__img");
   headImg.src = `./assets/head/ghost-head${n}.png`;
+  isHeadOn = n != 1;
+
+  let eyeImg = document.querySelector(".ghost-eye__img");
+  if(isHeadOn == true) {
+    eyeImg.style.opacity = 0.5;
+  } else {
+    eyeImg.style.opacity = 1.0;
+  }
 }
 
 function changeEye(n) {
