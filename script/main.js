@@ -3,8 +3,8 @@ let isHeadOn = false;
 const EYE_MAX = 9;
 const MOUTH_MAX = 11;
 const HEAD_MAX = 6;
-const HAND_MAX = 9;
-const BUBBLE_MAX = 11;
+const HAND_MAX = 10;
+const BUBBLE_MAX = 12;
 
 function saveImage() {
   html2canvas(document.querySelector(".preview"), { scale: 4 }).then(
