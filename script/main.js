@@ -2,11 +2,13 @@ let eye = 1;
 let mouth = 1;
 let head = 1;
 let hand = 1;
+let bubble = 1;
 
-const EYE_MAX = 6;
+const EYE_MAX = 9;
 const MOUTH_MAX = 11;
 const HEAD_MAX = 6;
 const HAND_MAX = 9;
+const BUBBLE_MAX = 11;
 
 function switchPrevHead() {
   const headImg = document.querySelector(".ghost-head__img");
@@ -77,6 +79,20 @@ function switchNextHand() {
   hand += 1;
   if (hand > HAND_MAX) hand = 1;
   handImg.src = `./assets/hand/ghost-hand${hand}.png`;
+}
+
+function switchPrevBubble() {
+  const bubbleImg = document.querySelector(".ghost-bubble__img");
+  bubble -= 1;
+  if (bubble <= 0) bubble = BUBBLE_MAX;
+  bubbleImg.src = `./assets/bubble/bubble${bubble}.png`;
+}
+
+function switchNextBubble() {
+  const bubbleImg = document.querySelector(".ghost-bubble__img");
+  bubble += 1;
+  if (bubble > BUBBLE_MAX) bubble = 1;
+  bubbleImg.src = `./assets/bubble/bubble${bubble}.png`;
 }
 
 function saveImage() {

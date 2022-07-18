@@ -198,10 +198,10 @@ footer {
   box-shadow: 0px 0px 10px 1px #bbb;
 }
 
-.ghost-body, .ghost-head, .ghost-eye, .ghost-mouth, .ghost-hand {
+.ghost-body, .ghost-head, .ghost-eye, .ghost-mouth, .ghost-hand, .ghost-bubble {
   padding-top: 1rem;
 }
-.ghost-head {
+.ghost-head, .ghost-hand, .ghost-bubble {
   position: absolute;
   top: 0;
 }
@@ -216,10 +216,6 @@ footer {
   width: 10rem;
   top: 14rem;
   right: 7rem;
-}
-.ghost-hand {
-  position: absolute;
-  top: 0;
 }
 
 .buttons {

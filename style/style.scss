@@ -203,10 +203,11 @@ footer {
   &-head,
   &-eye,
   &-mouth,
-  &-hand {
+  &-hand, 
+  &-bubble {
     padding-top: 1rem;
   }
-  &-head {
+  &-head, &-hand, &-bubble {
     position: absolute;
     top: 0;
   }
@@ -223,11 +224,6 @@ footer {
     width: 10rem;
     top: 14rem;
     right: 7rem;
-  }
-
-  &-hand {
-    position: absolute;
-    top: 0;
   }
 }
 
