@@ -1,102 +1,11 @@
-let eye = 1;
-let mouth = 1;
-let head = 1;
-let hand = 1;
-let bubble = 1;
-
 const EYE_MAX = 9;
 const MOUTH_MAX = 11;
 const HEAD_MAX = 6;
 const HAND_MAX = 9;
 const BUBBLE_MAX = 11;
 
-function switchPrevHead() {
-  const headImg = document.querySelector(".ghost-head__img");
-  head -= 1;
-  if (head <= 0) head = HEAD_MAX;
-  headImg.src = `./assets/head/ghost-head${head}.png`;
-
-  let eyeDiv = document.querySelector(".ghost-eye");
-  if (head != 1) {
-    eyeDiv.style.opacity = 0.3;
-  } else {
-    eyeDiv.style.opacity = 1.0;
-  }
-}
-
-function switchNextHead() {
-  const headImg = document.querySelector(".ghost-head__img");
-  head += 1;
-  if (head > HEAD_MAX) head = 1;
-  headImg.src = `./assets/head/ghost-head${head}.png`;
-
-  let eyeDiv = document.querySelector(".ghost-eye");
-  if (head != 1) {
-    eyeDiv.style.opacity = 0.3;
-  } else {
-    eyeDiv.style.opacity = 1.0;
-  }
-}
-
-function switchPrevEye() {
-  const eyeImg = document.querySelector(".ghost-eye__img");
-  eye -= 1;
-  if (eye <= 0) eye = EYE_MAX;
-  eyeImg.src = `./assets/eyes/ghost-eye${eye}.png`;
-}
-
-function switchNextEye() {
-  const eyeImg = document.querySelector(".ghost-eye__img");
-  eye += 1;
-  if (eye > EYE_MAX) eye = 1;
-  eyeImg.src = `./assets/eyes/ghost-eye${eye}.png`;
-}
-
-function switchPrevMouth() {
-  const mouthImg = document.querySelector(".ghost-mouth__img");
-  mouth -= 1;
-  if (mouth <= 0) mouth = MOUTH_MAX;
-  mouthImg.src = `./assets/mouth/ghost-mouth${mouth}.png`;
-}
-
-function switchNextMouth() {
-  const mouthImg = document.querySelector(".ghost-mouth__img");
-
-  mouth += 1;
-  if (mouth > MOUTH_MAX) mouth = 1;
-  mouthImg.src = `./assets/mouth/ghost-mouth${mouth}.png`;
-}
-
-function switchPrevHand() {
-  const handImg = document.querySelector(".ghost-hand__img");
-  hand -= 1;
-  if (hand <= 0) hand = HAND_MAX;
-  handImg.src = `./assets/hand/ghost-hand${hand}.png`;
-}
-
-function switchNextHand() {
-  const handImg = document.querySelector(".ghost-hand__img");
-  hand += 1;
-  if (hand > HAND_MAX) hand = 1;
-  handImg.src = `./assets/hand/ghost-hand${hand}.png`;
-}
-
-function switchPrevBubble() {
-  const bubbleImg = document.querySelector(".ghost-bubble__img");
-  bubble -= 1;
-  if (bubble <= 0) bubble = BUBBLE_MAX;
-  bubbleImg.src = `./assets/bubble/bubble${bubble}.png`;
-}
-
-function switchNextBubble() {
-  const bubbleImg = document.querySelector(".ghost-bubble__img");
-  bubble += 1;
-  if (bubble > BUBBLE_MAX) bubble = 1;
-  bubbleImg.src = `./assets/bubble/bubble${bubble}.png`;
-}
-
 function saveImage() {
-  html2canvas(document.querySelector(".preview"),{scale:4}).then(
+  html2canvas(document.querySelector(".preview"), { scale: 4 }).then(
     (canvas) => {
       let canvasUrl = canvas.toDataURL();
       // Create an anchor, and set the href value to our data URL
@@ -112,3 +21,58 @@ function saveImage() {
     }
   );
 }
+
+function changeHead(n) {
+  const headImg = document.querySelector(".ghost-head__img");
+  headImg.src = `./assets/head/ghost-head${n}.png`;
+}
+
+function changeEye(n) {
+  const eyeImg = document.querySelector(".ghost-eye__img");
+  eyeImg.src = `./assets/eyes/ghost-eye${n}.png`;
+}
+
+function changeMouth(n) {
+  const mouthImg = document.querySelector(".ghost-mouth__img");
+  mouthImg.src = `./assets/mouth/ghost-mouth${n}.png`;
+}
+
+function changeHand(n) {
+  const handImg = document.querySelector(".ghost-hand__img");
+  handImg.src = `./assets/hand/ghost-hand${n}.png`;
+}
+
+function changeBubble(n) {
+  const bubbleImg = document.querySelector(".ghost-bubble__img");
+  bubbleImg.src = `./assets/bubble/bubble${n}.png`;
+}
+
+window.onload = function () {
+  const closetHead = document.querySelector(".closet-head");
+  const closetEye = document.querySelector(".closet-eye");
+  const closetMouth = document.querySelector(".closet-mouth");
+  const closetHand = document.querySelector(".closet-hand");
+  const closetBubble = document.querySelector(".closet-bubble");
+
+  for (let i = 0; i < closetHead.children.length; i += 1) {
+    closetHead.children[i].addEventListener("click", () => changeHead(i + 1));
+  }
+
+  for (let i = 0; i < closetEye.children.length; i += 1) {
+    closetEye.children[i].addEventListener("click", () => changeEye(i + 1));
+  }
+
+  for (let i = 0; i < closetMouth.children.length; i += 1) {
+    closetMouth.children[i].addEventListener("click", () => changeMouth(i + 1));
+  }
+
+  for (let i = 0; i < closetHand.children.length; i += 1) {
+    closetHand.children[i].addEventListener("click", () => changeHand(i + 1));
+  }
+
+  for (let i = 0; i < closetBubble.children.length; i += 1) {
+    closetBubble.children[i].addEventListener("click", () =>
+      changeBubble(i + 1)
+    );
+  }
+};

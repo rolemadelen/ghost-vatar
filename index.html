@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/style.css" />
-    <script src="./script/main.js"></script>
+    <script src="./script/main.js" defer></script>
     <script src="./script/html2canvas.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,110 +31,376 @@
           </div>
           <div class="ghost-head">
             <img src="./assets/head/ghost-head1.png" class="ghost-head__img" />
-            <link rel="prefetch prerender" href="./assets/head/ghost-head2.png" />
-            <link rel="prefetch prerender" href="./assets/head/ghost-head3.png" />
-            <link rel="prefetch prerender" href="./assets/head/ghost-head4.png" />
-            <link rel="prefetch prerender" href="./assets/head/ghost-head5.png" />
-            <link rel="prefetch prerender" href="./assets/head/ghost-head6.png" />
           </div>
           <div class="ghost-eye">
-            <img
-              src="./assets/eyes/ghost-eye1.png"
-              alt="ghost eye"
-              class="ghost-eye__img"
-            />
-            <link rel="prefetch prerender" href="./assets/eyes/ghost-eye2.png" />
-            <link rel="prefetch prerender" href="./assets/eyes/ghost-eye3.png" />
-            <link rel="prefetch prerender" href="./assets/eyes/ghost-eye4.png" />
-            <link rel="prefetch prerender" href="./assets/eyes/ghost-eye5.png" />
-            <link rel="prefetch prerender" href="./assets/eyes/ghost-eye6.png" />
-            <link rel="prefetch prerender" href="./assets/eyes/ghost-eye7.png" />
-            <link rel="prefetch prerender" href="./assets/eyes/ghost-eye8.png" />
-            <link rel="prefetch prerender" href="./assets/eyes/ghost-eye9.png" />
+            <img src="./assets/eyes/ghost-eye1.png" class="ghost-eye__img" />
           </div>
           <div class="ghost-mouth">
             <img
               src="./assets/mouth/ghost-mouth1.png"
-              alt="ghost mouth"
               class="ghost-mouth__img"
             />
-            <link rel="prefetch prerender" href="./assets/mouth/ghost-mouth2.png" />
-            <link rel="prefetch prerender" href="./assets/mouth/ghost-mouth3.png" />
-            <link rel="prefetch prerender" href="./assets/mouth/ghost-mouth4.png" />
-            <link rel="prefetch prerender" href="./assets/mouth/ghost-mouth5.png" />
-            <link rel="prefetch prerender" href="./assets/mouth/ghost-mouth6.png" />
-            <link rel="prefetch prerender" href="./assets/mouth/ghost-mouth7.png" />
-            <link rel="prefetch prerender" href="./assets/mouth/ghost-mouth8.png" />
-            <link rel="prefetch prerender" href="./assets/mouth/ghost-mouth9.png" />
-            <link rel="prefetch prerender" href="./assets/mouth/ghost-mouth10.png" />
           </div>
           <div class="ghost-hand">
-            <img
-              src="./assets/hand/ghost-hand1.png"
-              alt="ghost hand"
-              class="ghost-hand__img"
-            />
-            <link rel="prefetch prerender" href="./assets/hand/ghost-hand2.png" />
-            <link rel="prefetch prerender" href="./assets/hand/ghost-hand3.png" />
-            <link rel="prefetch prerender" href="./assets/hand/ghost-hand4.png" />
-            <link rel="prefetch prerender" href="./assets/hand/ghost-hand5.png" />
-            <link rel="prefetch prerender" href="./assets/hand/ghost-hand6.png" />
-            <link rel="prefetch prerender" href="./assets/hand/ghost-hand7.png" />
-            <link rel="prefetch prerender" href="./assets/hand/ghost-hand8.png" />
-            <link rel="prefetch prerender" href="./assets/hand/ghost-hand9.png" />
+            <img src="./assets/hand/ghost-hand1.png" class="ghost-hand__img" />
           </div>
           <div class="ghost-bubble">
-            <img
-              src="./assets/bubble/bubble1.png"
-              class="ghost-bubble__img"
-            />
-            <link rel="prefetch prerender" href="./assets/bubble/bubble2.png" />
-            <link rel="prefetch prerender" href="./assets/bubble/bubble3.png" />
-            <link rel="prefetch prerender" href="./assets/bubble/bubble4.png" />
-            <link rel="prefetch prerender" href="./assets/bubble/bubble5.png" />
-            <link rel="prefetch prerender" href="./assets/bubble/bubble6.png" />
-            <link rel="prefetch prerender" href="./assets/bubble/bubble7.png" />
-            <link rel="prefetch prerender" href="./assets/bubble/bubble8.png" />
-            <link rel="prefetch prerender" href="./assets/bubble/bubble9.png" />
-            <link rel="prefetch prerender" href="./assets/bubble/bubble10.png" />
-            <link rel="prefetch prerender" href="./assets/bubble/bubble11.png" />
-          </div>
-        </div>
-        <div class="buttons">
-          <div class="head">
-            <p>Head</p>
-            <button onclick="switchPrevHead()">＜</button>
-            <button onclick="switchNextHead()">＞</button>
-          </div>
-          <div class="eye">
-            <p>Eye</p>
-            <button onclick="switchPrevEye()">＜</button>
-            <button onclick="switchNextEye()">＞</button>
-          </div>
-          <div class="mouth">
-            <p>Mouth</p>
-            <button onclick="switchPrevMouth()">＜</button>
-            <button onclick="switchNextMouth()">＞</button>
-          </div>
-          <div class="hand">
-            <p>Hand</p>
-            <button onclick="switchPrevHand()">＜</button>
-            <button onclick="switchNextHand()">＞</button>
-          </div>
-          <div class="bubble">
-            <p>Bubble</p>
-            <button onclick="switchPrevBubble()">＜</button>
-            <button onclick="switchNextBubble()">＞</button>
+            <img src="./assets/bubble/bubble1.png" class="ghost-bubble__img" />
           </div>
           <div class="save">
             <button onclick="saveImage()">Save</button>
           </div>
         </div>
+        <div class="buttons">
+          <div class="head">
+            <p>Head</p>
+            <ul class="closet-head">
+              <li>
+                <img
+                  src="./assets/head/ghost-head1.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/head/ghost-head2.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/head/ghost-head3.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/head/ghost-head4.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/head/ghost-head5.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/head/ghost-head6.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="eye">
+            <p>Eye</p>
+            <ul class="closet-eye">
+              <li>
+                <img
+                  src="./assets/eyes/ghost-eye1.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/eyes/ghost-eye2.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/eyes/ghost-eye3.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/eyes/ghost-eye4.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/eyes/ghost-eye5.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/eyes/ghost-eye6.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/eyes/ghost-eye7.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/eyes/ghost-eye8.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/eyes/ghost-eye9.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="mouth">
+            <p>Mouth</p>
+            <ul class="closet-mouth">
+              <li>
+                <img
+                  src="./assets/mouth/ghost-mouth1.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/mouth/ghost-mouth2.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/mouth/ghost-mouth3.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/mouth/ghost-mouth4.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/mouth/ghost-mouth5.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/mouth/ghost-mouth6.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/mouth/ghost-mouth7.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/mouth/ghost-mouth8.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/mouth/ghost-mouth9.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/mouth/ghost-mouth10.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="hand">
+            <p>Hand</p>
+            <ul class="closet-hand">
+              <li>
+                <img
+                  src="./assets/hand/ghost-hand1.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/hand/ghost-hand2.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/hand/ghost-hand3.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/hand/ghost-hand4.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/hand/ghost-hand5.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/hand/ghost-hand6.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/hand/ghost-hand7.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/hand/ghost-hand8.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/hand/ghost-hand9.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="bubble">
+            <p>Bubble</p>
+            <ul class="closet-bubble">
+              <li>
+                <img
+                  src="./assets/bubble/bubble1.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/bubble/bubble2.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/bubble/bubble3.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/bubble/bubble4.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/bubble/bubble5.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/bubble/bubble6.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/bubble/bubble7.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/bubble/bubble8.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/bubble/bubble9.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/bubble/bubble10.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/bubble/bubble11.png"
+                  width="50px"
+                  height="50px"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
       <footer>
         <p>
-          Created by <strong>Blue Eu</strong> | 
-          <a href="https://twitter.com/gonexvii"title="Twitter Profile">Twitter</a> |
+          Created by <strong>Blue Eu</strong> |
+          <a href="https://twitter.com/gonexvii" title="Twitter Profile"
+            >Twitter</a
+          >
+          |
           <a href="https://github.com/gonexvii" title="Github">GitHub</a>
         </p>
       </footer>

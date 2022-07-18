@@ -180,11 +180,6 @@ footer {
   font-size: 1.2rem;
 }
 
-.logo-github-small,
-.logo-twitter-small {
-  transform: scale(0.5);
-}
-
 .preview {
   width: 35rem;
   height: 35rem;
@@ -192,10 +187,6 @@ footer {
   box-shadow: 0px 0px 5px 1px #bbb;
   border-radius: 1rem;
   position: relative;
-
-  &:hover {
-    box-shadow: 0px 0px 10px 1px #bbb;
-  }
 }
 
 .ghost {
@@ -203,11 +194,14 @@ footer {
   &-head,
   &-eye,
   &-mouth,
-  &-hand, 
+  &-hand,
   &-bubble {
     padding-top: 1rem;
   }
-  &-head, &-hand, &-bubble {
+
+  &-head,
+  &-hand,
+  &-bubble {
     position: absolute;
     top: 0;
   }
@@ -228,32 +222,24 @@ footer {
 }
 
 .buttons {
+  max-width: 30rem;
   margin-left: 2rem;
-  > div {
-    padding: 1rem 0;
-  }
   p {
     font-size: 2rem;
-    padding: 0.5rem 0;
+    padding: 1rem 0 0.5rem 0;
   }
+}
+.save {
+  text-align: center;
+  position: absolute;
+  bottom: -5rem;
+  left: 9rem;
+  width: 50%;
 
-  .save {
-    text-align: center;
-    > button {
-      font-family: "Caveat", cursive, ui-sans-serif, system-ui, -apple-system,
-        BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
-        sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
-        Noto Color Emoji;
-      font-size: 2.5rem;
-      width: 90%;
-      margin: 0;
-    }
-  }
-
-  button {
-    margin: 0 0.5rem;
+  > button {
+    width: 100%;
+    font-family: "Caveat", cursive;
     cursor: pointer;
-    padding: 0.5rem 2rem;
     box-shadow: 0px 0px 1px 1px #bbb;
     border-radius: 0.5rem;
     border: none;
@@ -264,36 +250,63 @@ footer {
       box-shadow: 0px 0px 2px 1px #869ad2;
       transition: 0.2s all ease-in-out;
     }
+    font-size: 2.5rem;
   }
 }
 
-@media all and (max-width: 500px) {
+.closet-head,
+.closet-eye,
+.closet-mouth,
+.closet-hand,
+.closet-bubble {
+  display: flex;
+  overflow-x: scroll;
+
+  li {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    margin-right: 0.5rem;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+@media all and (max-width: 756px) {
   .wrapper {
     flex-direction: column;
   }
 
   .buttons {
-    margin: 2rem auto 0 auto;
+    max-width: 45rem;
+    margin: 8rem 0 auto 0;
+    transition: 0.2s all ease-in-out;
+
+    > div {
+      display: flex;
+      margin-bottom: 1rem;
+
+      > p {
+        display: none;
+      }
+    }
 
     .save {
-        justify-content: center;
+      justify-content: center;
       > button {
         padding: 1rem 3rem;
         width: 90%;
       }
     }
-
-    > div {
-      display: flex;
-    }
-
-    button {
-      padding: 0.5rem 3rem;
-    }
-
-    p {
-      width: 8rem;
-      font-size: 2.5rem;
-    }
   }
+}
+
+@media all and (max-width: 505px) {
+  .buttons {
+    max-width: 30rem;
+    transition: 0.2s all ease-in-out;
+  }
+
 }
