@@ -1,8 +1,8 @@
 let isHeadOn = false;
 
-const EYE_MAX = 9;
-const MOUTH_MAX = 11;
-const HEAD_MAX = 6;
+const EYE_MAX = 10;
+const MOUTH_MAX = 13;
+const HEAD_MAX = 12;
 const HAND_MAX = 10;
 const BUBBLE_MAX = 12;
 
@@ -30,7 +30,7 @@ function changeHead(n) {
   isHeadOn = n != 1;
 
   let eyeImg = document.querySelector(".ghost-eye__img");
-  if(isHeadOn == true) {
+  if(isHeadOn == true && (n < 7)) {
     eyeImg.style.opacity = 0.5;
   } else {
     eyeImg.style.opacity = 1.0;
