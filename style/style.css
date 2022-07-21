@@ -190,18 +190,33 @@ footer {
   position: relative;
 }
 
-.ghost-body, .ghost-head, .ghost-eye, .ghost-mouth, .ghost-hand, .ghost-bubble {
-  padding-top: 1rem;
-}
-.ghost-head, .ghost-hand, .ghost-bubble {
+.ghost-head, .ghost-effect, .ghost-hand, .ghost-bubble {
   position: absolute;
   top: 0;
+}
+.ghost-body {
+  z-index: 0;
+}
+.ghost-effect {
+  z-index: 1;
+  width: 8rem;
+  height: 8rem;
+  top: 8rem;
+  left: 11rem;
+}
+.ghost-head {
+  z-index: 2;
+}
+.ghost-bubble {
+  width: 14rem;
+  z-index: 4;
 }
 .ghost-eye {
   position: absolute;
   top: 10rem;
   left: 17rem;
   width: 12rem;
+  z-index: 3;
 }
 .ghost-mouth {
   position: absolute;
@@ -243,6 +258,8 @@ footer {
 }
 
 .closet-head,
+.closet-body,
+.closet-effect,
 .closet-eye,
 .closet-mouth,
 .closet-hand,
@@ -251,6 +268,8 @@ footer {
   overflow-x: scroll;
 }
 .closet-head li,
+.closet-body li,
+.closet-effect li,
 .closet-eye li,
 .closet-mouth li,
 .closet-hand li,
@@ -260,6 +279,8 @@ footer {
   margin-right: 0.5rem;
 }
 .closet-head li img,
+.closet-body li img,
+.closet-effect li img,
 .closet-eye li img,
 .closet-mouth li img,
 .closet-hand li img,

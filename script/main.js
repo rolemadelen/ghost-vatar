@@ -1,11 +1,5 @@
 let isHeadOn = false;
 
-const EYE_MAX = 10;
-const MOUTH_MAX = 13;
-const HEAD_MAX = 12;
-const HAND_MAX = 10;
-const BUBBLE_MAX = 12;
-
 function saveImage() {
   html2canvas(document.querySelector(".preview"), { scale: 4 }).then(
     (canvas) => {
@@ -30,11 +24,21 @@ function changeHead(n) {
   isHeadOn = n != 1;
 
   let eyeImg = document.querySelector(".ghost-eye__img");
-  if(isHeadOn == true && (n < 7)) {
+  if(isHeadOn == true && (n < 5)) {
     eyeImg.style.opacity = 0.5;
   } else {
     eyeImg.style.opacity = 1.0;
   }
+}
+
+function changeBody(n) {
+  const bodyImg = document.querySelector(".ghost-body__img");
+  bodyImg.src = `./assets/body/ghost-body${n}.png`;
+}
+
+function changeEffect(n) {
+  const effectImg = document.querySelector(".ghost-effect__img");
+  effectImg.src = `./assets/effect/ghost-effect${n}.png`;
 }
 
 function changeEye(n) {
@@ -58,11 +62,21 @@ function changeBubble(n) {
 }
 
 window.onload = function () {
+  const closetBody = document.querySelector(".closet-body");
+  const closetEffect = document.querySelector(".closet-effect");
   const closetHead = document.querySelector(".closet-head");
   const closetEye = document.querySelector(".closet-eye");
   const closetMouth = document.querySelector(".closet-mouth");
   const closetHand = document.querySelector(".closet-hand");
   const closetBubble = document.querySelector(".closet-bubble");
+
+  for (let i = 0; i < closetBody.children.length; i += 1) {
+    closetBody.children[i].addEventListener("click", () => changeBody(i + 1));
+  }
+
+  for (let i = 0; i < closetEffect.children.length; i += 1) {
+    closetEffect.children[i].addEventListener("click", () => changeEffect(i + 1));
+  }
 
   for (let i = 0; i < closetHead.children.length; i += 1) {
     closetHead.children[i].addEventListener("click", () => changeHead(i + 1));
