@@ -190,27 +190,37 @@ footer {
 }
 
 .ghost {
-  &-body,
   &-head,
-  &-eye,
-  &-mouth,
-  &-hand,
-  &-bubble {
-    padding-top: 1rem;
-  }
-
-  &-head,
+  &-effect,
   &-hand,
   &-bubble {
     position: absolute;
     top: 0;
   }
 
+  &-body {
+    z-index: 0;
+  }
+  &-effect {
+    z-index: 1;
+    width: 8rem;
+    height: 8rem;
+    top: 8rem;
+    left: 11rem;
+  }
+  &-head {
+    z-index: 2;
+  }
+  &-bubble {
+    width: 14rem;
+    z-index: 4;
+  }
   &-eye {
     position: absolute;
     top: 10rem;
     left: 17rem;
     width: 12rem;
+    z-index: 3;
   }
 
   &-mouth {
@@ -255,6 +265,8 @@ footer {
 }
 
 .closet-head,
+.closet-body,
+.closet-effect,
 .closet-eye,
 .closet-mouth,
 .closet-hand,
@@ -308,5 +320,4 @@ footer {
     max-width: 30rem;
     transition: 0.2s all ease-in-out;
   }
-
 }
