@@ -18,61 +18,81 @@ function saveImage() {
   );
 }
 
-function toggleActive(imgActive, imgs, n) {
-  if (imgActive) {
-    imgActive.classList.remove("active");
-    if (imgActive.src !== imgs[n - 1].src) {
-      imgs[n - 1].classList.toggle("active");
-    }
+function toggleActive(imgActive, currImgName, fileName, closetActive, closet) {
+  if(closetActive) closetActive.classList.remove("active");
+
+  if(currImgName === fileName) {
+    imgActive.classList.toggle("active");
+    if(closetActive) closetActive.classList.remove("active");
+    else closet.classList.add("active");
   } else {
-    imgs[n - 1].classList.toggle("active");
+    imgActive.classList.add("active");
+    closet.classList.add("active");
+    imgActive.src = fileName;
   }
 }
 
 function changeHead(n) {
-  const headImgActive = document.querySelector(".ghost-head .active");
-  const headImgs = document.querySelectorAll(".ghost-head img");  
-  toggleActive(headImgActive, headImgs, n);
+  const headImgActive = document.querySelector(".ghost-head__img");
+  const fileName = `./assets/head/ghost-head${n}.png`;
+  const currentFile = `.${headImgActive.src.substr(headImgActive.src.indexOf("/assets"))}`;
+  const closetHeadActive = document.querySelector(".closet-head li.active");
+  const closetHead = document.querySelectorAll(".closet-head li");
+  toggleActive(headImgActive, currentFile, fileName, closetHeadActive, closetHead[n-1]);
 }
 
 function changeBody(n) {
-  const bodyImgActive = document.querySelector(".ghost-body .active");
-  bodyImgActive.classList.remove("active");
-  const bodyImgs = document.querySelectorAll(".ghost-body img");
-  bodyImgs[n - 1].classList.add("active");
+  const bodyImgActive = document.querySelector(".ghost-body__img");
+  bodyImgActive.src = `./assets/body/ghost-body${n}.png`;
+  const closetBodyActive = document.querySelector(".closet-body li.active");
+  const closetBody = document.querySelectorAll(".closet-body li");
+  if(closetBodyActive) closetBodyActive.classList.remove("active");
+  closetBody[n-1].classList.add("active");
 }
 
 function changeEffect(n) {
-  const effectImgActive = document.querySelector(".ghost-effect .active");
-  const effectImgs = document.querySelectorAll(".ghost-effect img");
-  toggleActive(effectImgActive, effectImgs, n);
+  const effectImgActive = document.querySelector(".ghost-effect__img");
+  const fileName = `./assets/effect/ghost-effect${n}.png`;
+  const currentFile = `.${effectImgActive.src.substr(effectImgActive.src.indexOf("/assets"))}`;
+  const closetEffectActive = document.querySelector(".closet-effect li.active");
+  const closetEffect = document.querySelectorAll(".closet-effect li");
+  toggleActive(effectImgActive, currentFile, fileName, closetEffectActive, closetEffect[n-1]);
 }
 
 function changeEye(n) {
-  const eyeImgActive = document.querySelector(".ghost-eye .active");
-  eyeImgActive.classList.remove("active");
-  const eyeImgs = document.querySelectorAll(".ghost-eye img");
-  eyeImgs[n - 1].classList.add("active");
+  const eyeImgActive = document.querySelector(".ghost-eye__img");
+  eyeImgActive.src = `./assets/eyes/ghost-eye${n}.png`;
+  const closetEyeActive = document.querySelector(".closet-eye li.active");
+  const closetEye = document.querySelectorAll(".closet-eye li");
+  if(closetEyeActive) closetEyeActive.classList.remove("active");
+  closetEye[n-1].classList.add("active");
 }
 
 function changeMouth(n) {
-  const mouthImgActive = document.querySelector(".ghost-mouth .active");
-  mouthImgActive.classList.remove("active");
-  const mouthImgs = document.querySelectorAll(".ghost-mouth img");
-  mouthImgs[n - 1].classList.add("active");
+  const mouthImgActive = document.querySelector(".ghost-mouth__img");
+  mouthImgActive.src = `./assets/mouth/ghost-mouth${n}.png`;
+  const closetMouthActive = document.querySelector(".closet-mouth li.active");
+  const closetMouth = document.querySelectorAll(".closet-mouth li");
+  if(closetMouthActive) closetMouthActive.classList.remove("active");
+  closetMouth[n-1].classList.add("active");
 }
 
 function changeHand(n) {
-  const handImgActive = document.querySelector(".ghost-hand .active");
-  handImgActive.classList.remove("active");
-  const handImgs = document.querySelectorAll(".ghost-hand img");
-  handImgs[n - 1].classList.add("active");
+  const handImgActive = document.querySelector(".ghost-hand__img");
+  handImgActive.src = `./assets/hand/ghost-hand${n}.png`;
+  const closetHandActive = document.querySelector(".closet-hand li.active");
+  const closetHand = document.querySelectorAll(".closet-hand li");
+  if(closetHandActive) closetHandActive.classList.remove("active");
+  closetHand[n-1].classList.add("active");
 }
 
 function changeBubble(n) {
-  const bubbleImgActive = document.querySelector(".ghost-bubble .active");
-  const bubbleImgs = document.querySelectorAll(".ghost-bubble img");
-  toggleActive(bubbleImgActive, bubbleImgs, n);
+  const bubbleImgActive = document.querySelector(".ghost-bubble__img");
+  const fileName = `./assets/bubble/bubble${n}.png`;
+  const currentFile = `.${bubbleImgActive.src.substr(bubbleImgActive.src.indexOf("/assets"))}`;
+  const closetBubbleActive = document.querySelector(".closet-bubble li.active");
+  const closetBubble = document.querySelectorAll(".closet-bubble li");
+  toggleActive(bubbleImgActive, currentFile, fileName, closetBubbleActive, closetBubble[n-1]);
 }
 
 window.onload = function () {

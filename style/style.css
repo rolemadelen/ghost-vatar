@@ -112,6 +112,7 @@ body {
 
 ol,
 ul {
+  padding: 2px;
   list-style: none;
 }
 
@@ -231,6 +232,7 @@ footer {
 
 .active {
   display: block;
+  transition: 0.2s all ease-in-out;
 }
 
 .buttons {
@@ -282,9 +284,19 @@ footer {
 .closet-mouth li,
 .closet-hand li,
 .closet-bubble li {
+  overflow-y: clip;
   cursor: pointer;
   border: 1px solid #ccc;
   margin-right: 0.5rem;
+}
+.closet-head li.active,
+.closet-body li.active,
+.closet-effect li.active,
+.closet-eye li.active,
+.closet-mouth li.active,
+.closet-hand li.active,
+.closet-bubble li.active {
+  box-shadow: 0 0 3px #0879f0;
 }
 .closet-head li img,
 .closet-body li img,
@@ -294,7 +306,7 @@ footer {
 .closet-hand li img,
 .closet-bubble li img {
   width: 50px;
-  height: 50px;
+  height: 100%;
 }
 
 @media all and (max-width: 756px) {
