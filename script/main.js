@@ -1,3 +1,11 @@
+let bodies = [];
+let heads = [];
+let effects = [];
+let eyes = [];
+let mouths = [];
+let hands = [];
+let bubbles = [];
+
 let isHeadOn = false;
 
 function saveImage() {
@@ -32,67 +40,44 @@ function toggleActive(imgActive, currImgName, fileName, closetActive, closet) {
   }
 }
 
+function change(ghostClass, tag) {
+  let parent = document.querySelector(ghostClass);
+  if(!parent.children[0]) {
+    parent.appendChild(tag);
+  } else if (parent.children[0] != tag) {
+    parent.children[0].remove();
+    parent.appendChild(tag);
+  } else if(ghostClass !== ".ghost-body") {
+    parent.children[0].remove();
+  }
+}
+
 function changeHead(n) {
-  const headImgActive = document.querySelector(".ghost-head__img");
-  const fileName = `./assets/head/ghost-head${n}.png`;
-  const currentFile = `.${headImgActive.src.substr(headImgActive.src.indexOf("/assets"))}`;
-  const closetHeadActive = document.querySelector(".closet-head li.active");
-  const closetHead = document.querySelectorAll(".closet-head li");
-  toggleActive(headImgActive, currentFile, fileName, closetHeadActive, closetHead[n-1]);
+  change(".ghost-head", heads[n-1]);
 }
 
 function changeBody(n) {
-  const bodyImgActive = document.querySelector(".ghost-body__img");
-  bodyImgActive.src = `./assets/body/ghost-body${n}.png`;
-  const closetBodyActive = document.querySelector(".closet-body li.active");
-  const closetBody = document.querySelectorAll(".closet-body li");
-  if(closetBodyActive) closetBodyActive.classList.remove("active");
-  closetBody[n-1].classList.add("active");
+  change(".ghost-body", bodies[n-1]);
 }
 
 function changeEffect(n) {
-  const effectImgActive = document.querySelector(".ghost-effect__img");
-  const fileName = `./assets/effect/ghost-effect${n}.png`;
-  const currentFile = `.${effectImgActive.src.substr(effectImgActive.src.indexOf("/assets"))}`;
-  const closetEffectActive = document.querySelector(".closet-effect li.active");
-  const closetEffect = document.querySelectorAll(".closet-effect li");
-  toggleActive(effectImgActive, currentFile, fileName, closetEffectActive, closetEffect[n-1]);
+  change(".ghost-effect", effects[n-1]);
 }
 
 function changeEye(n) {
-  const eyeImgActive = document.querySelector(".ghost-eye__img");
-  eyeImgActive.src = `./assets/eyes/ghost-eye${n}.png`;
-  const closetEyeActive = document.querySelector(".closet-eye li.active");
-  const closetEye = document.querySelectorAll(".closet-eye li");
-  if(closetEyeActive) closetEyeActive.classList.remove("active");
-  closetEye[n-1].classList.add("active");
+  change(".ghost-eye", eyes[n-1]);
 }
 
 function changeMouth(n) {
-  const mouthImgActive = document.querySelector(".ghost-mouth__img");
-  mouthImgActive.src = `./assets/mouth/ghost-mouth${n}.png`;
-  const closetMouthActive = document.querySelector(".closet-mouth li.active");
-  const closetMouth = document.querySelectorAll(".closet-mouth li");
-  if(closetMouthActive) closetMouthActive.classList.remove("active");
-  closetMouth[n-1].classList.add("active");
+  change(".ghost-mouth", mouths[n-1]);
 }
 
 function changeHand(n) {
-  const handImgActive = document.querySelector(".ghost-hand__img");
-  handImgActive.src = `./assets/hand/ghost-hand${n}.png`;
-  const closetHandActive = document.querySelector(".closet-hand li.active");
-  const closetHand = document.querySelectorAll(".closet-hand li");
-  if(closetHandActive) closetHandActive.classList.remove("active");
-  closetHand[n-1].classList.add("active");
+  change(".ghost-hand", hands[n-1]);
 }
 
 function changeBubble(n) {
-  const bubbleImgActive = document.querySelector(".ghost-bubble__img");
-  const fileName = `./assets/bubble/bubble${n}.png`;
-  const currentFile = `.${bubbleImgActive.src.substr(bubbleImgActive.src.indexOf("/assets"))}`;
-  const closetBubbleActive = document.querySelector(".closet-bubble li.active");
-  const closetBubble = document.querySelectorAll(".closet-bubble li");
-  toggleActive(bubbleImgActive, currentFile, fileName, closetBubbleActive, closetBubble[n-1]);
+  change(".ghost-bubble", bubbles[n-1]);
 }
 
 window.onload = function () {
@@ -106,33 +91,54 @@ window.onload = function () {
 
   for (let i = 0; i < closetBody.children.length; i += 1) {
     closetBody.children[i].addEventListener("click", () => changeBody(i + 1));
+    let img = new Image();
+    img.src = `./assets/body/ghost-body${i+1}.png`;
+    bodies.push(img);
   }
 
   for (let i = 0; i < closetEffect.children.length; i += 1) {
     closetEffect.children[i].addEventListener("click", () =>
       changeEffect(i + 1)
     );
+    let img = new Image(50, 50);
+    img.src = `./assets/effect/ghost-effect${i+1}.png`;
+    effects.push(img);
   }
 
   for (let i = 0; i < closetHead.children.length; i += 1) {
     closetHead.children[i].addEventListener("click", () => changeHead(i + 1));
+    let img = new Image(50, 50);
+    img.src = `./assets/head/ghost-head${i+1}.png`;
+    heads.push(img);
   }
 
   for (let i = 0; i < closetEye.children.length; i += 1) {
     closetEye.children[i].addEventListener("click", () => changeEye(i + 1));
+    let img = new Image(50, 50);
+    img.src = `./assets/eyes/ghost-eye${i+1}.png`;
+    eyes.push(img);
   }
 
   for (let i = 0; i < closetMouth.children.length; i += 1) {
     closetMouth.children[i].addEventListener("click", () => changeMouth(i + 1));
+    let img = new Image(50, 50);
+    img.src = `./assets/mouth/ghost-mouth${i+1}.png`;
+    mouths.push(img);
   }
 
   for (let i = 0; i < closetHand.children.length; i += 1) {
     closetHand.children[i].addEventListener("click", () => changeHand(i + 1));
+    let img = new Image(50, 50);
+    img.src = `./assets/hand/ghost-hand${i+1}.png`;
+    hands.push(img);
   }
 
   for (let i = 0; i < closetBubble.children.length; i += 1) {
     closetBubble.children[i].addEventListener("click", () =>
       changeBubble(i + 1)
     );
+    let img = new Image(50, 50);
+    img.src = `./assets/bubble/bubble${i+1}.png`;
+    bubbles.push(img);
   }
 };
