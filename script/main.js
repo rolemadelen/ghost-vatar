@@ -18,61 +18,61 @@ function saveImage() {
   );
 }
 
+function toggleActive(imgActive, imgs, n) {
+  if (imgActive) {
+    imgActive.classList.remove("active");
+    if (imgActive.src !== imgs[n - 1].src) {
+      imgs[n - 1].classList.toggle("active");
+    }
+  } else {
+    imgs[n - 1].classList.toggle("active");
+  }
+}
+
 function changeHead(n) {
   const headImgActive = document.querySelector(".ghost-head .active");
-  headImgActive.classList.remove("active");
-  const headImgs = document.querySelectorAll(".ghost-head img");
-  headImgs[n-1].classList.add("active");
-  isHeadOn = n != 1;
-
-  let eyeImg = document.querySelector(".ghost-eye__img");
-  if(isHeadOn && (n < 5)) {
-    eyeImg.style.opacity = 0.5;
-  } else {
-    eyeImg.style.opacity = 1.0;
-  }
+  const headImgs = document.querySelectorAll(".ghost-head img");  
+  toggleActive(headImgActive, headImgs, n);
 }
 
 function changeBody(n) {
   const bodyImgActive = document.querySelector(".ghost-body .active");
   bodyImgActive.classList.remove("active");
   const bodyImgs = document.querySelectorAll(".ghost-body img");
-  bodyImgs[n-1].classList.add("active");
+  bodyImgs[n - 1].classList.add("active");
 }
 
 function changeEffect(n) {
   const effectImgActive = document.querySelector(".ghost-effect .active");
-  effectImgActive.classList.remove("active");
   const effectImgs = document.querySelectorAll(".ghost-effect img");
-  effectImgs[n-1].classList.add("active");
+  toggleActive(effectImgActive, effectImgs, n);
 }
 
 function changeEye(n) {
   const eyeImgActive = document.querySelector(".ghost-eye .active");
   eyeImgActive.classList.remove("active");
   const eyeImgs = document.querySelectorAll(".ghost-eye img");
-  eyeImgs[n-1].classList.add("active");
+  eyeImgs[n - 1].classList.add("active");
 }
 
 function changeMouth(n) {
   const mouthImgActive = document.querySelector(".ghost-mouth .active");
   mouthImgActive.classList.remove("active");
   const mouthImgs = document.querySelectorAll(".ghost-mouth img");
-  mouthImgs[n-1].classList.add("active");
+  mouthImgs[n - 1].classList.add("active");
 }
 
 function changeHand(n) {
   const handImgActive = document.querySelector(".ghost-hand .active");
   handImgActive.classList.remove("active");
   const handImgs = document.querySelectorAll(".ghost-hand img");
-  handImgs[n-1].classList.add("active");
+  handImgs[n - 1].classList.add("active");
 }
 
 function changeBubble(n) {
   const bubbleImgActive = document.querySelector(".ghost-bubble .active");
-  bubbleImgActive.classList.remove("active");
   const bubbleImgs = document.querySelectorAll(".ghost-bubble img");
-  bubbleImgs[n-1].classList.add("active");
+  toggleActive(bubbleImgActive, bubbleImgs, n);
 }
 
 window.onload = function () {
@@ -89,7 +89,9 @@ window.onload = function () {
   }
 
   for (let i = 0; i < closetEffect.children.length; i += 1) {
-    closetEffect.children[i].addEventListener("click", () => changeEffect(i + 1));
+    closetEffect.children[i].addEventListener("click", () =>
+      changeEffect(i + 1)
+    );
   }
 
   for (let i = 0; i < closetHead.children.length; i += 1) {
