@@ -31,3 +31,7 @@ Progress
 2022-07-18
 - UI improved
 - ![Demo](./progress/20220718.gif)
+
+2022-07-23
+- Assets optimized
+- ![Optimized](./progress/optimized.jpg)
