@@ -1,152 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/style.css"/>
-    <script src="./script/main.js" defer></script>
-    <script src="./script/html2canvas.min.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Ghost-vatar</title>
-  </head>
-  <body>
-    <div class="layout">
-      <header>
-        <h1>Ghostvatar</h1>
-      </header>
-      <section class="wrapper">
-        <div class="preview">
-          <div class="ghost-body">
-            <img loading="lazy" width="350px" height="320px" src="./assets/body/ghost-body1.png" class="ghost-body__img active"  alt="body"/>
-          </div>
-          <div class="ghost-head">
-          </div>
-          <div class="ghost-effect">
-          </div>
-          <div class="ghost-eye">
-          </div>
-          <div class="ghost-mouth">
-          </div>
-          <div class="ghost-hand">
-          </div>
-          <div class="ghost-bubble">
-          </div>
-          <div class="save">
-            <button onclick="saveImage()">Save</button>
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/style.css" />
+  <script src="./script/main.js" defer></script>
+  <script src="./script/html2canvas.min.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Ghost-vatar</title>
+</head>
+
+<body>
+  <div class="layout">
+    <header>
+      <h1>Ghostvatar</h1>
+    </header>
+    <section class="wrapper">
+      <div class="preview">
+        <div class="ghost-body">
+          <img loading="lazy" width="350px" height="320px" src="./assets/body/ghost-body1.png"
+            class="ghost-body__img active" alt="body" />
         </div>
-        <div class="buttons">
-          <div class="body">
-            <p>Ghost Body</p>
-            <ul class="closet-body">
-              <li><img src="./assets/body/ghost-body1.png" width="50px" height="50px"/></li>
-              <li><img src="./assets/body/ghost-body2.png" width="50px" height="50px" alt="body"/></li>
-              <li><img src="./assets/body/ghost-body3.png" width="50px" height="50px" alt="body"/></li>
-              <li><img src="./assets/body/ghost-body4.png" width="50px" height="50px" alt="body"/></li>
-              <li><img src="./assets/body/ghost-body5.png" width="50px" height="50px" alt="body"/></li>
-            </ul>
-          </div>
-          <div class="effect">
-            <p>Effect</p>
-            <ul class="closet-effect">
-              <li><img src="./assets/effect/ghost-effect1.png" width="50px" height="50px" alt="effect"/></li>
-              <li><img src="./assets/effect/ghost-effect2.png" width="50px" height="50px" alt="effect"/></li>
-            </ul>
-          </div>
-          <div class="head">
-            <p>Head</p>
-            <ul class="closet-head">
-                <li><img src="./assets/head/ghost-head1.png" width="50px" height="50px" alt="head"/></li>
-                <li><img src="./assets/head/ghost-head2.png" width="50px" height="50px" alt="head"/></li>
-                <li><img src="./assets/head/ghost-head3.png" width="50px" height="50px" alt="head"/></li>
-                <li><img src="./assets/head/ghost-head4.png" width="50px" height="50px" alt="head"/></li>
-                <li><img src="./assets/head/ghost-head5.png" width="50px" height="50px" alt="head"/></li>
-                <li><img src="./assets/head/ghost-head6.png" width="50px" height="50px" alt="head"/></li>
-                <li><img src="./assets/head/ghost-head7.png" width="50px" height="50px" alt="head"/></li>
-                <li><img src="./assets/head/ghost-head8.png" width="50px" height="50px" alt="head"/></li>
-                <li><img src="./assets/head/ghost-head9.png" width="50px" height="50px" alt="head"/></li>
-                <li><img src="./assets/head/ghost-head10.png" width="50px" height="50px" alt="head"/></li>
-                <li><img src="./assets/head/ghost-head11.png" width="50px" height="50px" alt="head"/></li>
-            </ul>
-          </div>
-          <div class="eye">
-            <p>Eye</p>
-            <ul class="closet-eye">
-                <li><img src="./assets/eyes/ghost-eye1.png" width="50px" height="50px"/></li>
-                <li><img src="./assets/eyes/ghost-eye2.png" width="50px" height="50px"  alt="eye"/></li>
-                <li><img src="./assets/eyes/ghost-eye3.png" width="50px" height="50px"  alt="eye"/></li>
-                <li><img src="./assets/eyes/ghost-eye4.png" width="50px" height="50px"  alt="eye"/></li>
-                <li><img src="./assets/eyes/ghost-eye5.png" width="50px" height="50px"  alt="eye"/></li>
-                <li><img src="./assets/eyes/ghost-eye6.png" width="50px" height="50px"  alt="eye"/></li>
-                <li><img src="./assets/eyes/ghost-eye7.png" width="50px" height="50px"  alt="eye"/></li>
-                <li><img src="./assets/eyes/ghost-eye8.png" width="50px" height="50px"  alt="eye"/></li>
-                <li><img src="./assets/eyes/ghost-eye9.png" width="50px" height="50px"  alt="eye"/></li>
-                <li><img src="./assets/eyes/ghost-eye10.png" width="50px" height="50px" alt="eye"/></li>
-            </ul>
-          </div>
-          <div class="mouth">
-            <p>Mouth</p>
-            <ul class="closet-mouth">
-                <li><img src="./assets/mouth/ghost-mouth1.png" width="50px" height="50px"/></li>
-                <li><img src="./assets/mouth/ghost-mouth2.png" width="50px" height="50px"  alt="mouth"/></li>
-                <li><img src="./assets/mouth/ghost-mouth3.png" width="50px" height="50px"  alt="mouth"/></li>
-                <li><img src="./assets/mouth/ghost-mouth4.png" width="50px" height="50px"  alt="mouth"/></li>
-                <li><img src="./assets/mouth/ghost-mouth5.png" width="50px" height="50px"  alt="mouth"/></li>
-                <li><img src="./assets/mouth/ghost-mouth6.png" width="50px" height="50px"  alt="mouth"/></li>
-                <li><img src="./assets/mouth/ghost-mouth7.png" width="50px" height="50px"  alt="mouth"/></li>
-                <li><img src="./assets/mouth/ghost-mouth8.png" width="50px" height="50px"  alt="mouth"/></li>
-                <li><img src="./assets/mouth/ghost-mouth9.png" width="50px" height="50px"  alt="mouth" /></li>
-                <li><img src="./assets/mouth/ghost-mouth10.png" width="50px" height="50px" alt="mouth" /></li>
-                <li><img src="./assets/mouth/ghost-mouth11.png" width="50px" height="50px" alt="mouth" /></li>
-                <li><img src="./assets/mouth/ghost-mouth12.png" width="50px" height="50px" alt="mouth" /></li>
-                <li><img src="./assets/mouth/ghost-mouth13.png" width="50px" height="50px" alt="mouth" /></li>
-            </ul>
-          </div>
-          <div class="hand">
-            <p>Hand</p>
-            <ul class="closet-hand">
-                <li><img src="./assets/hand/ghost-hand1.png" width="50px" height="50px"/></li>
-                <li><img src="./assets/hand/ghost-hand2.png" width="50px" height="50px" alt="hand"/></li>
-                <li><img src="./assets/hand/ghost-hand3.png" width="50px" height="50px" alt="hand"/></li>
-                <li><img src="./assets/hand/ghost-hand4.png" width="50px" height="50px" alt="hand"/></li>
-                <li><img src="./assets/hand/ghost-hand5.png" width="50px" height="50px" alt="hand"/></li>
-                <li><img src="./assets/hand/ghost-hand6.png" width="50px" height="50px" alt="hand"/></li>
-                <li><img src="./assets/hand/ghost-hand7.png" width="50px" height="50px" alt="hand"/></li>
-                <li><img src="./assets/hand/ghost-hand8.png" width="50px" height="50px" alt="hand"/></li>
-                <li><img src="./assets/hand/ghost-hand9.png" width="50px" height="50px" alt="hand"/></li>
-            </ul>
-          </div>
-          <div class="bubble">
-            <p>Bubble</p>
-            <ul class="closet-bubble">
-                <li><img src="./assets/bubble/bubble1.png" width="50px" height="50px"  alt="bubble"/></li>
-                <li><img src="./assets/bubble/bubble2.png" width="50px" height="50px"  alt="bubble"/></li>
-                <li><img src="./assets/bubble/bubble3.png" width="50px" height="50px"  alt="bubble"/></li>
-                <li><img src="./assets/bubble/bubble4.png" width="50px" height="50px"  alt="bubble"/></li>
-                <li><img src="./assets/bubble/bubble5.png" width="50px" height="50px"  alt="bubble"/></li>
-                <li><img src="./assets/bubble/bubble6.png" width="50px" height="50px"  alt="bubble"/></li>
-                <li><img src="./assets/bubble/bubble7.png" width="50px" height="50px"  alt="bubble"/></li>
-                <li><img src="./assets/bubble/bubble8.png" width="50px" height="50px"  alt="bubble"/></li>
-                <li><img src="./assets/bubble/bubble9.png" width="50px" height="50px"  alt="bubble"/></li>
-                <li><img src="./assets/bubble/bubble10.png" width="50px" height="50px" alt="bubble"/></li>
-                <li><img src="./assets/bubble/bubble11.png" width="50px" height="50px" alt="bubble"/></li>
-            </ul>
-          </div>
+        <div class="ghost-head">
         </div>
-      </section>
-      <footer>
-        <p>
-          Created by <strong>Gone</strong> | 
-          <a href="https://twitter.com/gonexvii"title="Twitter Profile">Twitter</a> |
-          <a href="https://github.com/gonexvii" title="Github">GitHub</a>
-        </p>
-      </footer>
-    </div>
-  </body>
+        <div class="ghost-effect">
+        </div>
+        <div class="ghost-eye">
+        </div>
+        <div class="ghost-mouth">
+        </div>
+        <div class="ghost-hand">
+        </div>
+        <div class="ghost-bubble">
+        </div>
+        <div class="save">
+          <button onclick="saveImage()">Save</button>
+        </div>
+      </div>
+      <div class="buttons">
+        <div class="body">
+          <p>Ghost Body</p>
+          <ul class="closet-body">
+            <li><img src="./assets/body/ghost-body1.png" width="50px" height="50px" /></li>
+            <li><img src="./assets/body/ghost-body2.png" width="50px" height="50px" alt="body" /></li>
+            <li><img src="./assets/body/ghost-body3.png" width="50px" height="50px" alt="body" /></li>
+            <li><img src="./assets/body/ghost-body4.png" width="50px" height="50px" alt="body" /></li>
+            <li><img src="./assets/body/ghost-body5.png" width="50px" height="50px" alt="body" /></li>
+          </ul>
+        </div>
+        <div class="effect">
+          <p>Effect</p>
+          <ul class="closet-effect">
+            <li><img src="./assets/effect/ghost-effect1.png" width="50px" height="50px" alt="effect" /></li>
+            <li><img src="./assets/effect/ghost-effect2.png" width="50px" height="50px" alt="effect" /></li>
+          </ul>
+        </div>
+        <div class="head">
+          <p>Head</p>
+          <ul class="closet-head">
+            <li><img src="./assets/head/ghost-head1.png" width="50px" height="50px" alt="head" /></li>
+            <li><img src="./assets/head/ghost-head2.png" width="50px" height="50px" alt="head" /></li>
+            <li><img src="./assets/head/ghost-head3.png" width="50px" height="50px" alt="head" /></li>
+            <li><img src="./assets/head/ghost-head4.png" width="50px" height="50px" alt="head" /></li>
+            <li><img src="./assets/head/ghost-head5.png" width="50px" height="50px" alt="head" /></li>
+            <li><img src="./assets/head/ghost-head6.png" width="50px" height="50px" alt="head" /></li>
+            <li><img src="./assets/head/ghost-head7.png" width="50px" height="50px" alt="head" /></li>
+            <li><img src="./assets/head/ghost-head8.png" width="50px" height="50px" alt="head" /></li>
+            <li><img src="./assets/head/ghost-head9.png" width="50px" height="50px" alt="head" /></li>
+            <li><img src="./assets/head/ghost-head10.png" width="50px" height="50px" alt="head" /></li>
+            <li><img src="./assets/head/ghost-head11.png" width="50px" height="50px" alt="head" /></li>
+          </ul>
+        </div>
+        <div class="eye">
+          <p>Eye</p>
+          <ul class="closet-eye">
+            <li><img src="./assets/eyes/ghost-eye1.png" width="50px" height="50px" /></li>
+            <li><img src="./assets/eyes/ghost-eye2.png" width="50px" height="50px" alt="eye" /></li>
+            <li><img src="./assets/eyes/ghost-eye3.png" width="50px" height="50px" alt="eye" /></li>
+            <li><img src="./assets/eyes/ghost-eye4.png" width="50px" height="50px" alt="eye" /></li>
+            <li><img src="./assets/eyes/ghost-eye5.png" width="50px" height="50px" alt="eye" /></li>
+            <li><img src="./assets/eyes/ghost-eye6.png" width="50px" height="50px" alt="eye" /></li>
+            <li><img src="./assets/eyes/ghost-eye7.png" width="50px" height="50px" alt="eye" /></li>
+            <li><img src="./assets/eyes/ghost-eye8.png" width="50px" height="50px" alt="eye" /></li>
+            <li><img src="./assets/eyes/ghost-eye9.png" width="50px" height="50px" alt="eye" /></li>
+            <li><img src="./assets/eyes/ghost-eye10.png" width="50px" height="50px" alt="eye" /></li>
+          </ul>
+        </div>
+        <div class="mouth">
+          <p>Mouth</p>
+          <ul class="closet-mouth">
+            <li><img src="./assets/mouth/ghost-mouth1.png" width="50px" height="50px" /></li>
+            <li><img src="./assets/mouth/ghost-mouth2.png" width="50px" height="50px" alt="mouth" /></li>
+            <li><img src="./assets/mouth/ghost-mouth3.png" width="50px" height="50px" alt="mouth" /></li>
+            <li><img src="./assets/mouth/ghost-mouth4.png" width="50px" height="50px" alt="mouth" /></li>
+            <li><img src="./assets/mouth/ghost-mouth5.png" width="50px" height="50px" alt="mouth" /></li>
+            <li><img src="./assets/mouth/ghost-mouth6.png" width="50px" height="50px" alt="mouth" /></li>
+            <li><img src="./assets/mouth/ghost-mouth7.png" width="50px" height="50px" alt="mouth" /></li>
+            <li><img src="./assets/mouth/ghost-mouth8.png" width="50px" height="50px" alt="mouth" /></li>
+            <li><img src="./assets/mouth/ghost-mouth9.png" width="50px" height="50px" alt="mouth" /></li>
+            <li><img src="./assets/mouth/ghost-mouth10.png" width="50px" height="50px" alt="mouth" /></li>
+            <li><img src="./assets/mouth/ghost-mouth11.png" width="50px" height="50px" alt="mouth" /></li>
+            <li><img src="./assets/mouth/ghost-mouth12.png" width="50px" height="50px" alt="mouth" /></li>
+            <li><img src="./assets/mouth/ghost-mouth13.png" width="50px" height="50px" alt="mouth" /></li>
+          </ul>
+        </div>
+        <div class="hand">
+          <p>Hand</p>
+          <ul class="closet-hand">
+            <li><img src="./assets/hand/ghost-hand1.png" width="50px" height="50px" /></li>
+            <li><img src="./assets/hand/ghost-hand2.png" width="50px" height="50px" alt="hand" /></li>
+            <li><img src="./assets/hand/ghost-hand3.png" width="50px" height="50px" alt="hand" /></li>
+            <li><img src="./assets/hand/ghost-hand4.png" width="50px" height="50px" alt="hand" /></li>
+            <li><img src="./assets/hand/ghost-hand5.png" width="50px" height="50px" alt="hand" /></li>
+            <li><img src="./assets/hand/ghost-hand6.png" width="50px" height="50px" alt="hand" /></li>
+            <li><img src="./assets/hand/ghost-hand7.png" width="50px" height="50px" alt="hand" /></li>
+            <li><img src="./assets/hand/ghost-hand8.png" width="50px" height="50px" alt="hand" /></li>
+            <li><img src="./assets/hand/ghost-hand9.png" width="50px" height="50px" alt="hand" /></li>
+          </ul>
+        </div>
+        <div class="bubble">
+          <p>Bubble</p>
+          <ul class="closet-bubble">
+            <li><img src="./assets/bubble/bubble1.png" width="50px" height="50px" alt="bubble" /></li>
+            <li><img src="./assets/bubble/bubble2.png" width="50px" height="50px" alt="bubble" /></li>
+            <li><img src="./assets/bubble/bubble3.png" width="50px" height="50px" alt="bubble" /></li>
+            <li><img src="./assets/bubble/bubble4.png" width="50px" height="50px" alt="bubble" /></li>
+            <li><img src="./assets/bubble/bubble5.png" width="50px" height="50px" alt="bubble" /></li>
+            <li><img src="./assets/bubble/bubble6.png" width="50px" height="50px" alt="bubble" /></li>
+            <li><img src="./assets/bubble/bubble7.png" width="50px" height="50px" alt="bubble" /></li>
+            <li><img src="./assets/bubble/bubble8.png" width="50px" height="50px" alt="bubble" /></li>
+            <li><img src="./assets/bubble/bubble9.png" width="50px" height="50px" alt="bubble" /></li>
+            <li><img src="./assets/bubble/bubble10.png" width="50px" height="50px" alt="bubble" /></li>
+            <li><img src="./assets/bubble/bubble11.png" width="50px" height="50px" alt="bubble" /></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>
+        Created by <strong>rolemadelen</strong> |
+        <a href="https://twitter.com/rolemadelen" title="Twitter Profile">Twitter</a> |
+        <a href="https://github.com/rolemadelen" title="Github">GitHub</a>
+      </p>
+    </footer>
+  </div>
+</body>
+
 </html>
